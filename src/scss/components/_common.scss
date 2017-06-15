@@ -1,0 +1,109 @@
+/*
+  _common.scss
+  v 0.5
+*/
+//  VARIABLES  ------------------------------------------------------------
+
+$bp-tablet: 768px;
+$bp-laptop: 992px;
+$bp-desktop: 1200px;
+$bp-cinema: 1440px;
+
+$mobile: '(max-width: ' + ($bp-tablet - 1) + ')';
+
+$tablet: '(min-width: ' + $bp-tablet + ')';
+$tablet-only: '(min-width: ' + $bp-tablet + ') and (max-width: ' + ($bp-laptop - 1) + ')';
+
+$laptop: '(min-width: ' + $bp-laptop + ')';
+$laptop-only: '(min-width: ' + $bp-laptop + ') and (max-width: ' + ($bp-desktop - 1) + ')';
+
+$desktop: '(min-width: ' + $bp-desktop + ')';
+$desktop-only: '(min-width: ' + $bp-desktop + ') and (max-width: ' + ($bp-cinema - 1) + ')';
+
+$cinema: '(min-width: ' + $bp-cinema + ')';
+
+// $mobile: 'screen and (max-width: 767px)';
+// $tablet: 'screen and (min-width: 768px)';
+// $desktop: 'screen and (min-width: 1024px)';
+// $desktop-lt-s: 'screen and (max-width: 1023px)';
+//
+// $mobile-s: 'screen and (max-width: 374px)';
+// $mobile-gt-s: 'screen and (min-width: 321px) and (max-width: 767px)';
+// $mobile-m: 'screen and (min-width: 375px) and (max-width: 413px)';
+// $mobile-gt-m: 'screen and (min-width: 375px) and (max-width: 767px)';
+// $mobile-lt-l: 'screen and (max-width: 413px)';
+// $mobile-l: 'screen and (min-width: 414px) and (max-width: 767px)';
+
+//  CLASSES  --------------------------------------------------------------
+
+.mobile {
+	@media #{$tablet} {
+		display: none;
+	}
+}
+
+.tablet {
+	@media #{$mobile} {
+		display: none;
+	}
+}
+
+.maxed {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.full {
+	position: absolute !important;
+	@extend .maxed;
+}
+
+.ontop {
+	position: fixed !important;
+	@extend .maxed;
+}
+
+.no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.vcenter {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.center {
+	text-align: center;
+}
+
+.clearfix {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ul.menu {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+
+	&.inline {
+		li {
+			display: inline;
+		}
+	}
+}

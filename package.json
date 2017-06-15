@@ -1,0 +1,30 @@
+{
+  "name": "appname",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "tbd"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "build-css": "node-sass src/scss/index.scss -o src/css/",
+    "watch-css": "npm run build-css && node-sass src/scss/index.scss -o src/css/ --watch",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
